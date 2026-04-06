@@ -16,7 +16,9 @@
     <div class="position-absolute top-50 start-50 translate-middle">
   <form id="formBusca">
     <label class="divlabel" for="Nome">Digite o nome do alimento:</label><br>
-    <input type="text" id="Nome" placeholder="exemplo:arroz" required>
+    <input type="text" id="Nome" placeholder="exemplo:arroz" required><br>
+    <label for="quantidade">Quantidade (g):</label><br>
+    <input type="number" id="quantidade" placeholder="ex: 300" required><br><br>
     <button type="submit" class="btn btn-primary" >Buscar</button>
     
   </form>
@@ -26,25 +28,42 @@
 
   <script>
     document.getElementById('formBusca').addEventListener('submit', function (e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      const nome = document.getElementById('Nome').value;
-      const resultadoDiv = document.getElementById('resultado');
+    const nome = document.getElementById('Nome').value;
+    const quantidade = document.getElementById('quantidade').value;
+    const resultadoDiv = document.getElementById('resultado');
 
-      fetch(`http://localhost:8000/api/alimentos/buscar/${encodeURIComponent(nome)}`)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('alimento não encontrado');
-          }
-          return response.json();
-        })
-        .then(data => {
-          resultadoDiv.innerHTML = `Nome: ${data.Nome}<br>Calorias: ${data.Calorias}<br>Proteinas: ${data.Proteinas}<br>Carboidratos: ${data.Carboidratos}<br>Gorduras: ${data.Gorduras}`;
-        })
-        .catch(error => {
-          resultadoDiv.innerHTML = error.message;
-        });
-    });
+    fetch(`http://localhost:8000/api/alimentos/buscar/${encodeURIComponent(nome)}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('alimento não encontrado');
+        }
+        return response.json();
+      })
+      .then(data => {
+
+        // regra de 3 (base 100g)
+        const fator = quantidade / 100;
+
+        const calorias = data.Calorias * fator;
+        const proteinas = data.Proteinas * fator;
+        const carboidratos = data.Carboidratos * fator;
+        const gorduras = data.Gorduras * fator;
+
+        resultadoDiv.innerHTML = `
+          <strong>${data.Nome}</strong><br>
+          Quantidade: ${quantidade}g<br><br>
+          Calorias: ${calorias.toFixed(2)}<br>
+          Proteínas: ${proteinas.toFixed(2)}g<br>
+          Carboidratos: ${carboidratos.toFixed(2)}g<br>
+          Gorduras: ${gorduras.toFixed(2)}g
+        `;
+      })
+      .catch(error => {
+        resultadoDiv.innerHTML = error.message;
+      });
+  });
   </script>    
   </div>
 </div>
