@@ -5,6 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <title>nutrição</title>
+  <link rel="icon" href="apple-whole-solid-full.svg" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <style>
     .body{
@@ -26,6 +27,7 @@
     .testo{
       position: absolute;
       top: 55%;
+      padding: 20px;
     }
     
   </style>
@@ -33,9 +35,11 @@
 <body class="body">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <br>
+<div class="head">
     <h1>Calculadora de Nutrientes</h1>
     <h3>Projeto de Extenção do curso de Engenharia de Software</h3>
     <hr>
+  </div>
 <div class="corpo">
   <form id="formBusca">
     <label class="divlabel" for="Nome">Digite o nome do alimento:</label><br>
@@ -92,11 +96,11 @@
  
 </div>
 <div class="testo">
+  <hr>
   <h2>Sobre o Projeto</h2>
-  <p class="fs-4">Um site que mostra as Calorias, Proteinas, Carboidados e Gorduras dos Alimentos buscados, feito em Laravel usando php, HTML, CSS, Bootstrap, ligado a um banco de dados relacional(mysql)</p>
+  <p class="fs-4">Um site que mostra as Calorias, Proteínas, Carboidratos e Gorduras dos Alimentos buscados, feito em Laravel usando php, HTML, CSS, Bootstrap, ligado a um banco de dados relacional(mysql).</p>
   <h2>O que é um projeto de extenção</h2>
-  <p class="fs-4">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p><br>    
+  <p class="fs-4">É um componente curricular obrigatória que exige que o aluno aplique os conhecimentos teóricos do seu curso em ações práticas na comunidade.</p><br>
 </div>
-
 </body>
 </html>
