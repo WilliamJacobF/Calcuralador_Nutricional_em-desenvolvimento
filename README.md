@@ -1,5 +1,11 @@
 # Projeto-Calculadora-Nutricional
- Este é um sistema fullstack desenvolvido com **Laravel** no backend e **HTML/CSS/JavaScript** no frontend. Ele permite aos moradores consultar os **dias e horários da coleta de lixo** digitando o nome da rua em um formulário.
+ Projeto de extenção do curso de Engenharia de Software, Um site que mostra as Calorias, Proteínas, Carboidratos e Gorduras dos Alimentos buscados, feito
+ em Laravel usando php, HTML, CSS, Bootstrap, ligado a um banco de dados relacional(mysql).
+
+---
+
+## ❓ O que é um Projeto de Extenção
+- disciplina acadêmica que permite uma atuação junto à comunidade por meio da implementação de um projeto com foco em soluções coletivas e que traga melhorias para um grupo de pessoas daquela localidade.
 
 ---
 
