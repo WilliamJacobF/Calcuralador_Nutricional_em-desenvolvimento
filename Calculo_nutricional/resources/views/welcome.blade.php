@@ -43,6 +43,10 @@
     </script>
     <br>
     <div class="head">
+        <li class="nav-item">
+            <a href="/login" class="nav-item">Entrar</a>
+            <a href="/register" class="nav-item">Cadastrar</a>
+        </li>
         <h1>Calculadora de Nutrientes</h1>
         <h3>Projeto de Extenção do curso de Engenharia de Software</h3>
         <hr>
